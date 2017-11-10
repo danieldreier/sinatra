@@ -962,8 +962,8 @@ module Sinatra
         filter! :before
         route!
       end
-    rescue ::Exception => boom
-      invoke { handle_exception!(boom) }
+    #rescue ::Exception => boom
+    #  invoke { handle_exception!(boom) }
     ensure
       filter! :after unless env['sinatra.static_file']
     end
