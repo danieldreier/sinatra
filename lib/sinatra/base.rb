@@ -970,6 +970,8 @@ module Sinatra
 
     # Error handling during requests.
     def handle_exception!(boom)
+      puts "DANIELDEBUG: boom = #{boom}"
+      raise boom
       @env['sinatra.error'] = boom
       status boom.respond_to?(:code) ? Integer(boom.code) : 500
 
